@@ -8790,6 +8790,31 @@ h1, h2, h3, h4, h5,
     -webkit-box-shadow: -20px 20px 69px -27px rgba(0, 0, 0, 0.33);
     -moz-box-shadow: -20px 20px 69px -27px rgba(0, 0, 0, 0.33);
     box-shadow: -20px 20px 69px -27px rgba(0, 0, 0, 0.33); }
+    /* Mobile fix for About Me image */
+@media (max-width: 768px) {
+  .ftco-about .img-about {
+    display: block !important;  /* ensure it is visible */
+    width: 100% !important;     /* full width on mobile */
+    height: auto !important;    /* adjust height automatically */
+    margin-bottom: 20px;        /* space between image and text */
+    order: -1;                  /* if using flex, move image above text */
+  }
+
+  .ftco-about .img-about .img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    box-shadow: none !important; /* optional for small screens */
+  }
+
+  /* Make the text stack below the image */
+  .ftco-about .row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+  }
+}
+
 
 .ftco-about ul.about-info {
   display: inline-block;
@@ -8814,6 +8839,7 @@ h1, h2, h3, h4, h5,
     width: 25%;
     border-left: 2px solid #b1b493;
     padding-left: 10px; }
+    
     @media (max-width: 1199.98px) {
       .ftco-about .my-interest .interest-wrap {
         width: 50%;
